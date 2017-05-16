@@ -2,18 +2,17 @@ from selenium import webdriver
 from selenium.common.exceptions import TimeoutException, WebDriverException
 from selenium.webdriver.support.ui import WebDriverWait
 from time import sleep
-
+#This crawler was used for the drivers category, can be extended to other categories with the right URL. It could not be multithreaded as selenium is not thread safe.
 def setup():
     chop = webdriver.ChromeOptions()
-    chop.add_extension('Adblock-Plus_v1.13.2.crx')
-    prefs = {"download.default_directory": "/Volumes/LLEWELLYN/final/"}
+    chop.add_extension('Adblock-Plus_v1.13.2.crx')#The adblocker extension for preventing unexpected popups in the form of advertisements and redirects
+    prefs = {"download.default_directory": "/Volumes/LLEWELLYN/final/"}#Change this to choose the target destination for the downloads
     chop.add_experimental_option("prefs", prefs)
     driver = webdriver.Chrome(chrome_options=chop)
     return driver
 def mycrawler(urllist):
-    #for i in range(20, 200):
     driver = setup()
-    driver.get(urllist[0])
+    driver.get(urllist[0])#opens the first page of the category specified by the URL
     try:
         default_handle = driver.current_window_handle
         handles = list(driver.window_handles)
@@ -58,7 +57,7 @@ def mycrawler(urllist):
                 print "There was a timeout during url:"+str(urllist[i])+" at element "+str(j)
             except WebDriverException as e:
                 print "Element not clickable"+str(e)+" for url:"+str(urllist[i])+" at element "+str(j)
-            except e:
+            except Exception as e:
                 print e
             finally:
                 driver.execute_script("window.open('" + urllist[i] + "')")
@@ -71,6 +70,7 @@ def mycrawler(urllist):
 
 if __name__=='__main__':
     urllist=["http://download.cnet.com/s/drivers/windows/"]
+    #this range was calculated after manually verifying the pages on the website
     for i in range(2,5572):
         urllist.append("http://download.cnet.com/s/drivers/windows/?page="+str(i))
     mycrawler(urllist)
