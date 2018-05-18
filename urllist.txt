@@ -1,0 +1,13 @@
+https://download.cnet.com/s/audio/windows/ 678 Audio
+https://download.cnet.com/s/biz-soft/windows/ 1817 Business
+https://download.cnet.com/s/chat-voip-email/windows/ 578 Chat
+https://download.cnet.com/s/customization/windows/ 540 Customization
+https://download.cnet.com/s/design/windows/ 563 Design
+https://download.cnet.com/s/desktop-enhancements/windows/ 749 Desktop
+https://download.cnet.com/s/developers/windows/ 1489 Developers
+https://download.cnet.com/s/drivers/windows/ 5572 Drivers
+https://download.cnet.com/s/education/windows/ 974 Education
+https://download.cnet.com/s/games/windows/ 2080 Games
+https://download.cnet.com/s/home/windows/ 302 Home
+https://download.cnet.com/s/security/windows/ 663 Security
+https://download.cnet.com/s/utilities/windows/ 1600 Utilities
